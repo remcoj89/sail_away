@@ -1,0 +1,11 @@
+<h1>Rent out a new boat</h1>
+
+<%= simple_form_for @boat do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "back to boats", boats_path %>
