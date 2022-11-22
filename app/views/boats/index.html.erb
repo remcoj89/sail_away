@@ -1,9 +1,13 @@
 <h1>All of our boats</h1>
 
-<% @boats.each do |boat| %>
-  <p><%= boat.name %></p>
-  <p><%= boat.description %></p>
-  <p>$ <%= boat.price %></p>
-<% end %>
-
+<div class="card">
+  <% @boats.each do |boat| %>
+    <p><%= boat.name %></p>
+    <p><%= boat.description %></p>
+    <p>$ <%= boat.price %></p>
+    <%= cl_image_tag boat.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= link_to "More info", boat_path(boat) %>
+    <%= link_to "Delete", boat_path(boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <% end %>
+</div>
 <%= link_to "rent out a new boat",  new_boat_path %>
