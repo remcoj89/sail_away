@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  get 'bookings/new'
+  # get 'bookings/new'
 
   devise_for :users
 
