@@ -1,7 +1,9 @@
 <h1>All of our boats</h1>
 
 <% @boats.each do |boat| %>
-  <p><%= boat %></p>
+  <p><%= boat.name %></p>
+  <p><%= boat.description %></p>
+  <p>$ <%= boat.price %></p>
 <% end %>
 
 <%= link_to "rent out a new boat",  new_boat_path %>
