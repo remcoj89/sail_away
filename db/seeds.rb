@@ -3,4 +3,3 @@
 #
 # Examples:
 #
-@user = User.create([{ first_name: "Freya" }, { last_name: "Heaton" }])
