@@ -35,12 +35,12 @@ class BoatsController < ApplicationController
   def destroy
     @boat = Boat.find(params[:id])
     @boat.destroy
-    redirect_to boats_path(@boat.restaurant), status: :see_other
+    redirect_to boats_path(@boats), status: :see_other
   end
 
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :description, :address, :price)
+    params.require(:boat).permit(:name, :description, :address, :price, :photo)
   end
 end

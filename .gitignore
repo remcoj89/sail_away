@@ -42,3 +42,4 @@
 .DS_Store
 
 db/schema.rb
+.env*
