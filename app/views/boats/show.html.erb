@@ -1,17 +1,25 @@
 <div class="container">
   <h1><%= @boat.name %></h1>
 
-  <div class="container d-flex">
+  <div class="container d-flex justify-content-between my-5">
       <div class="image-container">
-      <h1>test</h1>
+        <%= cl_image_tag @boat.photo.key, height: 500, width: 500, crop: :fill %>
       </div>
 
     <div class="info">
-      <h2>About the boat</h2>
-      <p><%= @boat.description %></p>
+      <div class="booking-card">
+          <h2><%= @boat.name %></h2>
+          <p>€ <%= @boat.price %><p>
+          <%= link_to "Book now", new_booking_path, class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
 
+
+  <div class="description">
+    <h2>About the boat</h2>
+      <p><%= @boat.description %></p>
+  </div>
 
 
   <div style="width: 100%; height: 600px;"
