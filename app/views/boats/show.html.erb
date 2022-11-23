@@ -9,7 +9,8 @@
     <div class="info">
       <div class="booking-card">
           <h2><%= @boat.name %></h2>
-          <p>€ <%= @boat.price %><p>
+          <p><%= @boat.description %></p>
+          <p>€ <%= @boat.price %>,- p. day<p>
           <%= link_to "Book now", new_booking_path, class: "btn btn-primary" %>
       </div>
     </div>
