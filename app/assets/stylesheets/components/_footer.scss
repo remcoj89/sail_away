@@ -3,10 +3,17 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  // height: 100px;
+  height: 100px;
   padding: 0px 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: black;
+  position: bottom;
+  color: rgb(255, 255, 255);
+  background-image: url("https://images.pling.com/img/00/00/62/84/47/1693761/lake-boat-forest-background.3805-1920x1080.jpg");
+  background-position: bottom;
+}
+
+.footer-links {
+  
 }
