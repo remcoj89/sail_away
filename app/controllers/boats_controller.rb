@@ -1,5 +1,4 @@
 class BoatsController < ApplicationController
-
   def index
     @boats = Boat.all
     @markers = @boats.geocoded.map do |boat|
