@@ -1,6 +1,7 @@
 <div class="container">
   <h1>All of our boats</h1>
   <%= link_to "rent out a new boat",  new_boat_path %>
+  
   <% @boats.each do |boat| %>
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <div class="col">
