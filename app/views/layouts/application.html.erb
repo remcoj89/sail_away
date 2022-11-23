@@ -11,10 +11,11 @@
   </head>
 
   <body>
-  <%= render "shared/navbar" %>
-  <%= render "shared/flashes" %>
-    <%= yield %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
+      <%= yield %>
+    <div class="d-flex flex-column-reverse    h-100 justify-content-between">
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>
