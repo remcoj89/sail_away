@@ -1,23 +1,26 @@
 <div class="container">
-<h1>All of our boats</h1>
-<% @boats.each do |boat| %>
-  <div class="card mb-3" style="max-width: 100%;">
-      <div class="row g-0">
-        <div class="col-md-6">
-        <%= cl_image_tag boat.photo.key, width: 400 %>
-        </div>
-        <div class="col-md-6">
-          <div class="card-body">
-            <h5 class="card-title"><%= boat.name %></h5>
-            <p class="card-text"><%= boat.description %></p>
-            <p class="card-text">$ <%= boat.price %></p>
-            <%= link_to "More info", boat_path(boat) %>
-            <%= link_to "Delete", boat_path(boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <h1>All of our boats</h1>
+  <% @boats.each do |boat| %>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card">
+          <%# <img src="..." class="card-img-top" alt="..."> %>
+          <%= cl_image_tag boat.photo.key  %>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><%= boat.name %></h5>
+              <p class="card-text"><%= boat.price %></p>
+              <%= link_to "More info", boat_path(boat) %>
+              <%= link_to "Delete", boat_path(boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   <% end %>
 </div>
+
+
+
 
 <%= link_to "rent out a new boat",  new_boat_path %>
