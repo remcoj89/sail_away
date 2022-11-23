@@ -1,25 +1,25 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
-  margin: 50px;
-}
-.grid-item {
-  height:500px;
-  width:400px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  margin: 50px;
-  font-size: 30px;
-  text-align: center;
+.button {
+  text-decoration: none;
+  font-family: "Raleway";
 }
 
-.headers {
-  margin-top: 50px;
+.banner {
+  background: no-repeat center fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 190px 0;
+  height: 100vh;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-family: 'Berkshire Swash', cursive;
+  // font-weight: bold;
 }
 
 .btn {
-  text-decoration: none;
-  font-family: "Raleway";
+  color: white;
 }
