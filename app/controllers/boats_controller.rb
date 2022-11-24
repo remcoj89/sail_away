@@ -20,23 +20,22 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boat_params)
     @boat.user = current_user
-   
     if @boat.save
       redirect_to boat_path(@boat)
-      redirect_to boats_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @boat = boat.find(params[:id])
+    @boat = Boat.find(params[:id])
     @boat.user = current_user
   end
 
   def update
-    @boat = boat.find(params[:id])
-    @boat.update(params[:boat])
+    @boat = Boat.find(params[:id])
+    @boat.update(boat_params)
+    redirect_to boat_path(@boat)
   end
 
   def destroy
