@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h1>Update your boat</h1>
+
+    <%= simple_form_for @boat do |f| %>
+    <%= f.input :name %>
+    <%= f.input :catagory %>
+    <%= f.input :description %>
+    <%= f.input :size %>
+    <%= f.input :capacity %>
+    <%= f.input :price %>
+    <%= f.input :address %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+
+  <%= link_to "back to boats", boats_path, class: "btn btn-primary" %>
+</div>

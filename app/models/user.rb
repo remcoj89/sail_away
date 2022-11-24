@@ -4,11 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # has_many :boats, :bookings
+  has_many :boats
+  has_many :bookings
 
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, uniqueness: true, presence: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
   validates :password, presence: true, length: { minimum: 6 }
-
 end
