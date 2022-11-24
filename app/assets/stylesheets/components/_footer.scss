@@ -8,6 +8,9 @@
   position: bottom;
   background-position: bottom;
   color: rgb(0, 0, 0);
+  background-color: transparent;
+  z-index: 1;
+
 }
 
 .footer-copyright {
@@ -23,4 +26,8 @@
   padding: 8px;
   font-size: 25px;
   color: #69a5b7;
+}
+
+.text-navbar {
+  color: white !important;
 }
