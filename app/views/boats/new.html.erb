@@ -3,16 +3,16 @@
   <h1>Rent out a new boat</h1>
 
   <%= simple_form_for @boat do |f| %>
-    <%= f.input :name %>
-    <%= f.input :catagory %>
-    <%= f.input :description %>
-    <%= f.input :size %>
-    <%= f.input :capacity %>
-    <%= f.input :price %>
-    <%= f.input :address %>
+    <%= f.input :name, placeholder: "Name..." %>
+    <%= f.input :category, prompt: "Select category", collection: ["Sailing", "Fishing", "Yacht", "Motor boats", "Row boat"] %>
+    <%= f.input :description, placeholder: "Please wrigt a description..." %>
+    <%= f.input :size, placeholder: "Size in meter" %>
+    <%= f.input :capacity, placeholder: "max capacity" %>
+    <%= f.input :price, placeholder: "Price per day" %>
+    <%= f.input :address, placeholder: "Address..." %>
     <%= f.input :photo, as: :file %>
     <%= f.submit %>
   <% end %>
 
-  <%= link_to "back to boats", boats_path, class: "btn btn-primary" %>
+  <%= link_to "back to boats", boats_path, class: "btn btn-primary my-5" %>
 </div>
