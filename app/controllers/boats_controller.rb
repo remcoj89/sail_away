@@ -20,7 +20,7 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boat_params)
     @boat.user = current_user
-   
+
     if @boat.save
       redirect_to boat_path(@boat)
       redirect_to boats_path
@@ -30,7 +30,7 @@ class BoatsController < ApplicationController
   end
 
   def edit
-    @boat = boat.find(params[:id])
+    @boat = oat.find(params[:id])
     @boat.user = current_user
   end
 
