@@ -13,7 +13,6 @@
               <p class="card-text">Capacity <%= boat.capacity %></p>
               <p class="card-text">€ <%= boat.price %>,- p. day</p>
               <%= link_to "More info", boat_path(boat), class: "btn btn-primary" %>
-              <%= link_to "Delete", boat_path(boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-warning" %>
             </div>
           </div>
       </div>
