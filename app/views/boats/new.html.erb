@@ -1,12 +1,18 @@
-<h1>Rent out a new boat</h1>
+<div class="container">
 
-<%= simple_form_for @boat do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
-
-<%= link_to "back to boats", boats_path %>
+  <h1>Rent out a new boat</h1>
+  
+  <%= simple_form_for @boat do |f| %>
+    <%= f.input :name %>
+    <%= f.input :catagory %>
+    <%= f.input :description %>
+    <%= f.input :size %>
+    <%= f.input :capacity %>
+    <%= f.input :price %>
+    <%= f.input :address %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+  
+  <%= link_to "back to boats", boats_path %>
+</div>
