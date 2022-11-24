@@ -1,29 +1,20 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pling.com/img/00/00/62/84/47/1693761/lake-boat-forest-background.3805-1920x1080.jpg);">
+<div class="banner d-flex align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pling.com/img/00/00/62/84/47/1693761/lake-boat-forest-background.3805-1920x1080.jpg);">
   <div class="container">
     <div class="headers text-center">
       <h1>Rent a boat<strong> anywhere in the world</strong></h1>
 
-    <%= form_with url: boats_path, method: :get, class: "d-flex" do %>
-      <div class="search-form-control form-group">
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a boat"
-        %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+      <%= form_with url: boats_path, method: :get, class: "d-flex" do %>
+        <div class="search-form-control form-group w-100">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a boat"
+          %>
+          <%= submit_tag "Search", class: "btn btn-search" %>
+        </div>
+      <% end %>
 
-      <%= link_to "Browse our boats", boats_path, class: "btn btn-primary" %>
+      <%= link_to "Browse our boats", boats_path, class: "btn btn-only-text" %>
     </div>
   </div>
 </div>
-
-
-   <%# <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-      <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> Search
-        </button>
-      </div>
-    </form> %>

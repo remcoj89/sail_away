@@ -7,8 +7,7 @@
   background: no-repeat center fixed;
   background-size: cover;
   background-position: center;
-  padding: 190px 0;
-  height: 100vh;
+  height: 100%;
 }
 
 .banner h1 {
@@ -17,7 +16,21 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-family: 'Berkshire Swash', cursive;
-  // font-weight: bold;
 }
 
+.btn-only-text {
+  font-size: 30px;
+  color: white;
+  border: solid;
+  background-color: transparent;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 0px 25px;
+  transition: 1s ease;
+}
 
+.btn-only-text:hover {
+  border-radius: 25px 0px;
+  transition: 1s ease;
+  color: white;
+  border: solid;
+}
