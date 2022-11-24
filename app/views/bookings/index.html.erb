@@ -1,10 +1,18 @@
-<header>
+<div class="container py-5">
 <h1>Bookings</h1>
-</header>
 
-<% @bookings.each do |booking| %>
-  <p><%= booking %></p>
-<% end %>
-</main>
-
-<%= link_to "New booking",  new_booking_path %>
+  <% @bookings.each do |booking| %>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <li> <%= booking.boat.name%></li>
+                <p class="card-title"><%= booking.start_date %></p>
+                <p class="card-text"> <%= booking.end_date %></p>
+                <%# <%= link_to "Update", boat_path(boat), class: "btn btn-primary" %> %>
+              </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>

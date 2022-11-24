@@ -16,7 +16,7 @@
           <h2><%= @boat.name %></h2>
           <p><%= @boat.description %></p>
           <p>€ <%= @boat.price %>,- p. day<p>
-          <%= link_to "Book now", new_booking_path, class: "btn btn-primary" %>
+          <%= link_to "Book now", new_boat_booking_path(@boat), class: "btn btn-primary" %>
           <%= link_to "Change boat info", edit_boat_path(@boat), class: "btn btn-info" %>
           <%= link_to "Delete", boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-warning" %>
       </div>
