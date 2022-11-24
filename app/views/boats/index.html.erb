@@ -7,7 +7,7 @@
 
     <% @boats.each do |boat| %>
       <div class="card" style="width: 25rem;">
-        <div class="card-image" style="background-image: url(<%= boat.photo_attachment ? cl_image_path(boat.photo.key): 'https://cdn.boatinternational.com/convert/files/2022/11/f8be9c00-6b15-11ed-9143-a1ae6fafdd97-miza%20side%20profile.jpg/r%5Bwidth%5D=1920&r%5Bheight%5D=1080/f8be9c00-6b15-11ed-9143-a1ae6fafdd97-miza%20side%20profile.webp' %>)">
+        <div class="card-image" style="background-image: url(<%= boat.photo_attachment ? cl_image_path(boat.photo.key): 'https://res.cloudinary.com/dipnvqfev/image/upload/v1669214577/production/svp2tose58vdk3dizs3ynsrrmbw4.jpg' %>)">
         </div>
 
         <div class="card-body">
