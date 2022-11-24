@@ -1,21 +1,147 @@
-<div class="container py-5">
+<div class="container pb-5">
+
+<section>
   <h1>All of our boats</h1>
 
+  <div class="gallery">
 
-  <% @boats.each do |boat| %>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col">
-          <div class="card" style="width: 18rem;">
-            <%# <div class="card-image" style="background-image: url(<%= boat.photo_attachment ? cl_image_path(boat.photo.key) : 'https://cdn.boatinternational.com/convert/files/2022/11/f8be9c00-6b15-11ed-9143-a1ae6fafdd97-miza%20side%20profile.jpg/r%5Bwidth%5D=1920&r%5Bheight%5D=1080/f8be9c00-6b15-11ed-9143-a1ae6fafdd97-miza%20side%20profile.webp' %>)"> %>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title"><%= boat.name %></h5>
-              <p class="card-text">€ <%= boat.price %>,- p. day</p>
-              <%= link_to "More info", boat_path(boat), class: "btn btn-primary" %>
-              <%= link_to "Delete", boat_path(boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-warning" %>
-            </div>
-          </div>
+    <% @boats.each do |boat| %>
+      <div class="card" style="width: 25rem;">
+        <div class="card-image" style="background-image: url(<%= boat.photo_attachment ? cl_image_path(boat.photo.key): 'https://res.cloudinary.com/dipnvqfev/image/upload/v1669214577/production/svp2tose58vdk3dizs3ynsrrmbw4.jpg' %>)">
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title"><%= boat.name %></h5>
+          <p class="card-text">Category: <%= boat.category %></p>
+          <p class="card-text">Location: <%= boat.address %></p>
+          <p class="card-text">€ <%= boat.price %></p>
+					<div class="d-flex justify-content-between p-5">
+          	<%= link_to "More info", boat_path(boat), class: "btn btn-primary " %>
+						<%= link_to "Book now", new_booking_path(boat), class: "btn btn-primary" %>
+					</div>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+</section>
+
+  <section>
+      <h2>Sailing</h2>
+
+			<div class="gallery">
+
+    <% @boats.each do |boat| %>
+      <div class="card" style="width: 25rem;">
+        <div class="card-image" style="background-image: url(<%= boat.photo_attachment ? cl_image_path(boat.photo.key): 'https://res.cloudinary.com/dipnvqfev/image/upload/v1669214577/production/svp2tose58vdk3dizs3ynsrrmbw4.jpg' %>)">
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title"><%= boat.name %></h5>
+          <p class="card-text">Category: <%= boat.category %></p>
+          <p class="card-text">Location: <%= boat.address %></p>
+          <p class="card-text">€ <%= boat.price %></p>
+					<div class="d-flex justify-content-between p-5">
+          	<%= link_to "More info", boat_path(boat), class: "btn btn-primary " %>
+						<%= link_to "Book now", new_booking_path(boat), class: "btn btn-primary" %>
+					</div>
+        </div>
+      </div>
+    <% end %>
+  </section>
+
+  <section>
+      <h2>Fishing</h2>
+
+			<div class="gallery">
+
+    <% @boats.each do |boat| %>
+      <div class="card" style="width: 25rem;">
+        <div class="card-image" style="background-image: url(<%= boat.photo_attachment ? cl_image_path(boat.photo.key): 'https://res.cloudinary.com/dipnvqfev/image/upload/v1669214577/production/svp2tose58vdk3dizs3ynsrrmbw4.jpg' %>)">
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title"><%= boat.name %></h5>
+          <p class="card-text">Category: <%= boat.category %></p>
+          <p class="card-text">Location: <%= boat.address %></p>
+          <p class="card-text">€ <%= boat.price %></p>
+					<div class="d-flex justify-content-between p-5">
+          	<%= link_to "More info", boat_path(boat), class: "btn btn-primary " %>
+						<%= link_to "Book now", new_booking_path(boat), class: "btn btn-primary" %>
+					</div>
+        </div>
+      </div>
+    <% end %>
+  </section>
+
+  <section>
+      <h2>Yachts</h2>
+
+		<div class="gallery">
+
+    <% @boats.each do |boat| %>
+      <div class="card" style="width: 25rem;">
+        <div class="card-image" style="background-image: url(<%= boat.photo_attachment ? cl_image_path(boat.photo.key): 'https://res.cloudinary.com/dipnvqfev/image/upload/v1669214577/production/svp2tose58vdk3dizs3ynsrrmbw4.jpg' %>)">
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title"><%= boat.name %></h5>
+          <p class="card-text">Category: <%= boat.category %></p>
+          <p class="card-text">Location: <%= boat.address %></p>
+          <p class="card-text">€ <%= boat.price %></p>
+					<div class="d-flex justify-content-between p-5">
+          	<%= link_to "More info", boat_path(boat), class: "btn btn-primary " %>
+						<%= link_to "Book now", new_booking_path(boat), class: "btn btn-primary" %>
+					</div>
+        </div>
+      </div>
+    <% end %>
+  </section>
+
+   <section>
+      <h2>Motor boats</h2>
+
+			<div class="gallery">
+
+    <% @boats.each do |boat| %>
+      <div class="card" style="width: 25rem;">
+        <div class="card-image" style="background-image: url(<%= boat.photo_attachment ? cl_image_path(boat.photo.key): 'https://res.cloudinary.com/dipnvqfev/image/upload/v1669214577/production/svp2tose58vdk3dizs3ynsrrmbw4.jpg' %>)">
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title"><%= boat.name %></h5>
+          <p class="card-text">Category: <%= boat.category %></p>
+          <p class="card-text">Location: <%= boat.address %></p>
+          <p class="card-text">€ <%= boat.price %></p>
+					<div class="d-flex justify-content-between p-5">
+          	<%= link_to "More info", boat_path(boat), class: "btn btn-primary " %>
+						<%= link_to "Book now", new_booking_path(boat), class: "btn btn-primary" %>
+					</div>
+        </div>
+      </div>
+    <% end %>
+  </section>
+
+  <section>
+      <h2>Row boats</h2>
+
+			<div class="gallery">
+
+    <% @boats.each do |boat| %>
+      <div class="card" style="width: 25rem;">
+        <div class="card-image" style="background-image: url(<%= boat.photo_attachment ? cl_image_path(boat.photo.key): 'https://res.cloudinary.com/dipnvqfev/image/upload/v1669214577/production/svp2tose58vdk3dizs3ynsrrmbw4.jpg' %>)">
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title"><%= boat.name %></h5>
+          <p class="card-text">Category: <%= boat.category %></p>
+          <p class="card-text">Location: <%= boat.address %></p>
+          <p class="card-text">€ <%= boat.price %></p>
+					<div class="d-flex justify-content-between p-5">
+          	<%= link_to "More info", boat_path(boat), class: "btn btn-primary " %>
+						<%= link_to "Book now", new_booking_path(boat), class: "btn btn-primary" %>
+					</div>
+        </div>
+      </div>
+    <% end %>
+  </section>
 </div>
