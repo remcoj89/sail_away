@@ -1,4 +1,4 @@
-.navbar-lewagon {
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,11 +12,20 @@
     flex-grow: 0;
   }
 
-  .name {
+  .logo {
     color: white;
     font-family: 'Berkshire Swash', cursive;
     font-size: 55px;
     font-stretch: expanded;
     padding: 25px;
     margin-bottom: 0;
+  }
+
+  .nav-link {
+    color: white !important;
+    margin-right: 15px;
+  }
+
+  .avatar {
+    margin-top: 15px;
   }
