@@ -1,11 +1,25 @@
-section{
-  margin-top:20px;
+// section {
+//   margin-top:20px;
+//   background-color: #f4f4f4;
+//   padding: 25px;
 
-  h1{
-    margin-left: 20px;
-  }
+//   h1 {
+//     margin-left: 20px;
+//   }
 
-  h2{
-    margin-left: 20px;
-  }
+//   h2 {
+//     margin-left: 20px;
+//   }
+// }
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-family: 'Raleway', sans-serif;
+  font-size: 35px;
+  font-stretch: expanded;
+  padding: 25px;
+  // margin-bottom: 0;
 }

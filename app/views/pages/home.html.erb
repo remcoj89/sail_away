@@ -1,18 +1,18 @@
 <%= render "shared/navbar", class:"navbar-transparent" %>
-    <div class="flex-grow-1 vh-80">
+    <div class="flex-grow-1">
 <div class="banner d-flex align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pling.com/img/00/00/62/84/47/1693761/lake-boat-forest-background.3805-1920x1080.jpg);">
   <div class="container">
     <div class="headers text-center">
       <h1>Rent a boat<strong> anywhere in the world</strong></h1>
 
       <%= form_with url: boats_path, method: :get, class: "d-flex" do %>
-        <div class="search-form-control form-group w-100">
+        <div class="search-form-control form-group w-100 d-flex align-items-baseline mr-5">
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Amsterdam, Lisbon, Madrid......"
           %>
-          <%= submit_tag "Search", class: "btn btn-search" %>
+          <%= submit_tag "Search", class: "btn btn-only-text-white h-5 ms-4" %>
         </div>
       <% end %>
 
