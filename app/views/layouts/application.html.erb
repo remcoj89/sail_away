@@ -10,15 +10,15 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Raleway:ital,wght@1,300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
 
   </head>
 
-  <body class="d-flex flex-column vh-100">
-    <%= render "shared/navbar" %>
-    <div class="flex-grow-1">
+  <body>
+
       <%= yield %>
     </div>
     <%= render "shared/footer" %>

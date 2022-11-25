@@ -60,8 +60,7 @@ p "sailing complete"
 
 row_boat_photo = ["https://res.cloudinary.com/dipnvqfev/image/upload/v1669383094/production/gulfside-mike-KrlekyEGHsc-unsplash_yg1f1m.jpg",
                   "https://res.cloudinary.com/dipnvqfev/image/upload/v1669383093/production/nico-smit-97AXKO-pdrk-unsplash_wm12bk.jpg",
-                  "https://res.cloudinary.com/dipnvqfev/image/upload/v1669382980/production/quino-al-dhGFLj3rI0Q-unsplash_dtmvde.jpg",
-                 ]
+                  "https://res.cloudinary.com/dipnvqfev/image/upload/v1669382980/production/quino-al-dhGFLj3rI0Q-unsplash_dtmvde.jpg",]
 
 3.times do
   file = URI.open(row_boat_photo.sample)
