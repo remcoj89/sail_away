@@ -8,13 +8,13 @@
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Find a boat"
+            placeholder: "Amsterdam, Lisbon, Madrid......"
           %>
           <%= submit_tag "Search", class: "btn btn-search" %>
         </div>
       <% end %>
 
-      <%= link_to "Browse our boats", boats_path, class: "btn btn-only-text-white" %>
+      <%= link_to "Browse our boats", boats_path, class: "btn btn-only-text-white mt-5" %>
     </div>
   </div>
 </div>
