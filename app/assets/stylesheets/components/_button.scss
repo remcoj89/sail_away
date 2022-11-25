@@ -24,6 +24,7 @@
   font-size: 30px;
   color: rgb(0, 0, 0);
   border: solid;
+  border-color: black;
   background-color: transparent;
   font-family: 'Raleway', sans-serif;
   border-radius: 0px 25px;
@@ -31,9 +32,9 @@
   margin: 25px;
 }
 
-.btn-only-text-black:hover {
-  border-radius: 25px 0px;
-  transition: 1s ease;
-  color: rgb(0, 0, 0);
-  border: solid;
-}
+  // .btn-only-text-black:hover {
+  //   border-radius: 25px 0px;
+  //   transition: 1s ease;
+  //   color: rgb(0, 0, 0);
+  //   border: solid;
+  // }

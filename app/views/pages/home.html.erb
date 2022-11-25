@@ -1,3 +1,5 @@
+<%= render "shared/navbar", class:"navbar-transparent" %>
+    <div class="flex-grow-1 vh-80">
 <div class="banner d-flex align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pling.com/img/00/00/62/84/47/1693761/lake-boat-forest-background.3805-1920x1080.jpg);">
   <div class="container">
     <div class="headers text-center">
@@ -8,13 +10,14 @@
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Find a boat"
+            placeholder: "Amsterdam, Lisbon, Madrid......"
           %>
           <%= submit_tag "Search", class: "btn btn-search" %>
         </div>
       <% end %>
 
-      <%= link_to "Browse our boats", boats_path, class: "btn btn-only-text-white" %>
+      <%= link_to "Browse our boats", boats_path, class: "btn btn-only-text-white mt-5" %>
     </div>
   </div>
+</div>
 </div>

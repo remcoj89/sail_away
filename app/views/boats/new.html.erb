@@ -1,19 +1,23 @@
-<div class="container">
+<%= render "shared/navbar" %>
+    <div class="flex-grow-1"><div class="container vh-80">
+  <div class="upload-boat-form">
+    <div class="upload-boat">
+      <h1>Upload My Boat</h1>
+    </div>
 
-  <h1>Rent out a new boat</h1>
-
-  <%= simple_form_for @boat do |f| %>
-    <%= f.input :name, placeholder: "Name..." %>
-    <%= f.input :category, prompt: "Select category", collection: ["Sailing", "Fishing", "Yacht", "Motor boats", "Row boat"] %>
-    <%= f.input :description, placeholder: "Please wrigt a description..." %>
-    <%= f.input :size, placeholder: "Size in meter" %>
-    <%= f.input :capacity, placeholder: "max capacity" %>
-    <%= f.input :price, placeholder: "Price per day" %>
-    <%= f.input :address, placeholder: "Address..." %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
-
-  <%= link_to "back to boats", boats_path, class: "btn btn-primary my-5" %>
-
+    <%= simple_form_for @boat do |f| %>
+      <%= f.input :name, placeholder: "What's the name of your boat?" %>
+      <%= f.input :category, prompt: "Choose a category", collection: ["Sailing", "Fishing", "Yacht", "Motor boats", "Row boat"] %>
+      <%= f.input :description, placeholder: "Please take some time to describe your boat" %>
+      <%= f.input :size, placeholder: "How big is your boat?" %>
+      <%= f.input :capacity, placeholder: "What is the maximum capacity of your boat?" %>
+      <%= f.input :price, placeholder: "What is the price per day of your boat?" %>
+      <%= f.input :address, placeholder: "Where is your boat located?" %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit class: "btn button" %>
+    <% end %>
+    <div class="back-to-boats">
+      <%= link_to "Back to Boats", boats_path, class: "btn btn-only-text my-5" %>
+    </div>
+  </div>
 </div>
