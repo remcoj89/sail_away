@@ -2,16 +2,15 @@
 <p>Find me in app/views/bookings/new.html.erb</p> %>
 
 <div class="container" >
+
 <h1>Make a new booking</h1>
-<button type="button" class="btn btn-light"><%= link_to "Back to bookings", bookings_path %></button>
-<%= simple_form_for @booking do |f| %>
-<div class='container' style='margin-top: 100px;'>
-  <%= f.input :start_date, as: :date, html5: true%>
-  <%= f.input :end_date, as: :date, html5: true %>
-  <%= f.submit %>
 
-
+<%= simple_form_for [@boat, @booking] do |f| %>
+  <div class='container' style='margin-top: 100px;'>
+    <%= f.input :start_date, as: :date, html5: true%>
+    <%= f.input :end_date, as: :date, html5: true %>
+    <%= f.submit %>
   <% end %>
 </div>
-  
+
 </div>
