@@ -7,7 +7,7 @@
       </div>
 
     <div class="info">
-      <div class="booking-card">
+      <div class="booking-card mb-2">
           <h2><%= @boat.name %></h2>
           <p><%= @boat.description %></p>
           <p>€ <%= @boat.price %>,- p. day<p>
@@ -15,25 +15,27 @@
           <%= link_to "Change boat info", edit_boat_path(@boat), class: "btn btn-info" %>
           <%= link_to "Delete", boat_path(@boat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-warning" %>
       </div>
+      <div style="width: 100%; height: 300px;"
+           data-controller="map"
+           data-map-markers-value="<%= @markers.to_json %>"
+           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> master
   <div class="description">
     <h2>About the boat</h2>
       <p><%= @boat.description %></p>
-      <%= link_to "Back to boats", boats_path, class: "btn btn-primary" %>
+      <%= link_to "Back to boats", boats_path, class: "btn btn-primary mt-3" %>
   </div>
+<<<<<<< HEAD
+=======
 
 
-
-
-  <div style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-
-
+>>>>>>> master
 </div>
