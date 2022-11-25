@@ -1,5 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon text-navbar"  <% if current_page?(root_url) %> style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.4)), url(https://images.pling.com/img/00/00/62/84/47/1693761/lake-boat-forest-background.3805-1920x1080.jpg);<% end %>" >
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
     <div class="d-flex flex-row align-items-end">
@@ -21,7 +20,7 @@
             <%= link_to "Upload My Boat", new_boat_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "profile_pic.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Profile", bookings_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>

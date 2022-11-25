@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_list, only: [:show]
+  before_action :set_booking, only: [:show, :edit, :update]
 
   def index
     @bookings = Booking.all
@@ -11,24 +11,28 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @boat = Boat.find(params[:boat_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @boat = Boat.find(params[:boat_id])
+    @booking.boat = @boat
+    @booking.status = "accepted"
+    @booking.user = current_user
+
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path(@booking)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @booking = booking.find(params[:id])
     @booking.user = current_user
   end
 
   def update
-    @booking = booking.find(params[:id])
     @booking.update(params[:boat])
   end
 
@@ -39,8 +43,11 @@ class BookingsController < ApplicationController
 
   private
 
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :status)
   end
-
 end

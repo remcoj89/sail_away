@@ -1,0 +1,11 @@
+
+<div class="booking-card mb-3">
+  <h3><%= @booking.boat.name %></h3>
+
+  <%= cl_image_tag @booking.boat.photo.key, height: 200, width: 300, crop: :fill %>
+
+  <h4>Start date <%= @booking.start_date %></h4>
+  <h4>End date <%= @booking.end_date %></h4>
+  <br>
+  <h4><%= @booking.status %></h4>
+</div>
