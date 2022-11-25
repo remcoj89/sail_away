@@ -1,6 +1,13 @@
 class BoatsController < ApplicationController
   def index
     @boats = Boat.geocoded
+    # @sailing_boats = @boats.where(category: "Sailing")
+    @fishing_boats = @boats.where(category: "Fishing")
+    @row_boats = @boats.where(category: "Row boat")
+    @yacht_boats = @boats.where(category: "Yacht")
+    @motor_boats = @boats.where(category: "Motor boats")
+
+    @all_categories = [@fishing_boats, @row_boats, @yacht_boats, @motor_boats]
   end
 
   def show
@@ -20,7 +27,6 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boat_params)
     @boat.user = current_user
-    @boat.status = "accepted"
     @boat.user = current_user
 
     if @boat.save
@@ -43,6 +49,7 @@ class BoatsController < ApplicationController
 
   def destroy
     @boat = Boat.find(params[:id])
+    @boat.user = current_user
     @boat.destroy
     redirect_to boats_path(@boats), status: :see_other
   end
