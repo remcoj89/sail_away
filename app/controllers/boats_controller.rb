@@ -27,7 +27,9 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boat_params)
     @boat.user = current_user
+
     @boat.user = current_user
+
 
     if @boat.save
       redirect_to boat_path(@boat)

@@ -1,0 +1,26 @@
+.upload-boat-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  font-family: "Raleway";
+  // overflow: scroll;
+  }
+
+.back-to-boats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-boat h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-family: 'Raleway', sans-serif;
+  font-size: 35px;
+  font-stretch: expanded;
+  padding: 25px;
+  // margin-bottom: 0;
+}
