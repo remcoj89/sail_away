@@ -1,4 +1,8 @@
-<div class="footer footer-expand-sm footer-light" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.8)), url(https://images.pling.com/img/00/00/62/84/47/1693761/lake-boat-forest-background.3805-1920x1080.jpg);">
+<% if current_page?(root_url) %>
+  <div class="footer footer-expand-sm footer-light text-navbar" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.4)), url(https://images.pling.com/img/00/00/62/84/47/1693761/lake-boat-forest-background.3805-1920x1080.jpg);">
+<% else %>
+  <div class="footer footer-expand-sm footer-light">
+<% end %>
   <div class="footer-copyright">
     <a class="nav-link" href="#"  >Contact Us</a>
     <a class="nav-link" href="#">About Us</a>

@@ -1,4 +1,7 @@
+
 <div class="container py-5">
+
+
 <h1>Bookings</h1>
 
   <% @bookings.each do |booking| %>
@@ -15,4 +18,11 @@
         </div>
       </div>
   <% end %>
+
+<% @bookings.each do |booking| %>
+  <p><%= booking %></p>
+<% end %>
+
+<%= link_to "New booking",  new_booking_path %>
+
 </div>

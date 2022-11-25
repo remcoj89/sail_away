@@ -1,0 +1,39 @@
+.button {
+  text-decoration: none;
+  font-family: "Raleway";
+}
+
+.btn-only-text-white {
+  font-size: 30px;
+  color: white;
+  border: solid;
+  background-color: transparent;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 0px 25px;
+  transition: 1s ease;
+}
+
+.btn-only-text-white:hover {
+  border-radius: 25px 0px;
+  transition: 1s ease;
+  color: white;
+  border: solid;
+}
+
+.btn-only-text-black {
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  border: solid;
+  background-color: transparent;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 0px 25px;
+  transition: 1s ease;
+  margin: 25px;
+}
+
+.btn-only-text-black:hover {
+  border-radius: 25px 0px;
+  transition: 1s ease;
+  color: rgb(0, 0, 0);
+  border: solid;
+}
