@@ -1,12 +1,9 @@
 require "open-uri"
 require "faker"
 
-
-puts "Destroying users..."
-User.destroy_all
 puts "Creating users..."
 
-User.create(
+User.first_or_create(
   first_name: "Daniel",
   last_name: "Foca",
   address: "Den Haag",
@@ -14,7 +11,7 @@ User.create(
   password: "123456"
 )
 
-User.create(
+User.first_or_create(
   first_name: "Freya",
   last_name: "Heaton",
   address: "Amsterdam",
@@ -22,7 +19,7 @@ User.create(
   password: "123456"
 )
 
-User.create(
+User.first_or_create(
   first_name: "Remco",
   last_name: "Jonk",
   address: "Schermerhon",
@@ -43,14 +40,14 @@ sailing_photo = ["https://res.cloudinary.com/dipnvqfev/image/upload/v1669383208/
 5.times do
   file = URI.open(sailing_photo.sample)
   @boat = Boat.new(
-  name: Faker::Name.name,
-  description: "bla bla,",
-  address: ["Amsterdam", "Rotterdam", "London", "Monaco", "Porto"].sample,
-  price: 1500,
-  category: "Sailing",
-  size: 15,
-  capacity: 15
-)
+    name: Faker::Name.name,
+    description: "bla bla,",
+    address: ["Amsterdam", "Rotterdam", "London", "Monaco", "Porto"].sample,
+    price: 1500,
+    category: "Sailing",
+    size: 15,
+    capacity: 15
+  )
   @boat.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   @boat.user = User.all.sample
   @boat.save
@@ -65,8 +62,7 @@ row_boat_photo = ["https://res.cloudinary.com/dipnvqfev/image/upload/v1669383094
 3.times do
   file = URI.open(row_boat_photo.sample)
   @boat = Boat.new(
-    name:
-    Faker::Name.name,
+    name: Faker::Name.name,
     description: "bla bla,",
     address: ["Amsterdam", "Rotterdam", "London", "Monaco", "Porto"].sample,
     price: 1500,
@@ -81,7 +77,6 @@ row_boat_photo = ["https://res.cloudinary.com/dipnvqfev/image/upload/v1669383094
 end
 p "row boat complete"
 
-
 fishing_photo = ["https://res.cloudinary.com/dipnvqfev/image/upload/v1669383374/production/annie-spratt-8vBXTliybPo-unsplash_ntbbdq.jpg",
                  "https://res.cloudinary.com/dipnvqfev/image/upload/v1669383374/production/paul-levesley-9nWZtUCscZc-unsplash_uahhdp.jpg",
                  "https://res.cloudinary.com/dipnvqfev/image/upload/v1669383374/production/anastasia-palagutina-txbXuzTJdSA-unsplash_yaqdyj.jpg",
@@ -91,8 +86,7 @@ fishing_photo = ["https://res.cloudinary.com/dipnvqfev/image/upload/v1669383374/
 5.times do
   file = URI.open(fishing_photo.sample)
   @boat = Boat.new(
-    name:
-    Faker::Name.name,
+    name: Faker::Name.name,
     description: "bla bla,",
     address: ["Amsterdam", "Rotterdam", "London", "Monaco", "Porto"].sample,
     price: 1500,
@@ -111,13 +105,10 @@ yacht_photo = ["https://res.cloudinary.com/dipnvqfev/image/upload/v1669383255/pr
                "https://res.cloudinary.com/dipnvqfev/image/upload/v1669214377/production/8utgzpmw7aee3ksshk9h4d3z21vo.jpg",
                "https://res.cloudinary.com/dipnvqfev/image/upload/v1669212735/production/lsmohnx8hh6t8tpco8v6gwdapb7o.jpg"]
 
-
-
 4.times do
   file = URI.open(yacht_photo.sample)
   @boat = Boat.new(
-    name:
-    Faker::Name.name,
+    name: Faker::Name.name,
     description: "bla bla,",
     address: ["Amsterdam", "Rotterdam", "London", "Monaco", "Porto"].sample,
     price: 1500,
@@ -132,30 +123,40 @@ end
 
 p "yacht complete"
 
+motor_boat_photo = [
+  "https://res.cloudinary.com/dipnvqfev/image/upload/v1669383094/production/vincent-ghilione-BZIFDBfdyho-unsplash_ga1hi4.jpg",
+  "https://res.cloudinary.com/dipnvqfev/image/upload/v1669383095/production/alex-lesik-WF90intuPdk-unsplash_wtmlid.jpg",
+  "https://res.cloudinary.com/dipnvqfev/image/upload/v1669383093/production/emil-dosen-SiN3jDqxoRA-unsplash_mcdied.jpg",
+  "https://res.cloudinary.com/dipnvqfev/image/upload/v1669385827/production/20150906_111312_cpd8ky.jpg",
+  "https://res.cloudinary.com/dipnvqfev/image/upload/v1669385826/production/sloep_gb1bm4.jpg"
+]
 
+5.times do
+  file = URI.open(motor_boat_photo.sample)
+  @boat = Boat.new(
+    name: Faker::Name.name,
+    description: "bla bla,",
+    address: ["Amsterdam", "Rotterdam", "London", "Monaco", "Porto"].sample,
+    price: 1500,
+    category: "Motor boats",
+    size: 15,
+    capacity: 15
+  )
+  @boat.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  @boat.user = User.all.first
 
-motor_boat_photo = ["https://res.cloudinary.com/dipnvqfev/image/upload/v1669383094/production/vincent-ghilione-BZIFDBfdyho-unsplash_ga1hi4.jpg",
-                    "https://res.cloudinary.com/dipnvqfev/image/upload/v1669383095/production/alex-lesik-WF90intuPdk-unsplash_wtmlid.jpg",
-                    "https://res.cloudinary.com/dipnvqfev/image/upload/v1669383093/production/emil-dosen-SiN3jDqxoRA-unsplash_mcdied.jpg",
-                    "https://res.cloudinary.com/dipnvqfev/image/upload/v1669385827/production/20150906_111312_cpd8ky.jpg",
-                    "https://res.cloudinary.com/dipnvqfev/image/upload/v1669385826/production/sloep_gb1bm4.jpg"]
+  @boat.save
+end
 
-      5.times do
-        file = URI.open(motor_boat_photo.sample)
-        @boat = Boat.new(
-          name:
-          Faker::Name.name,
-          description: "bla bla,",
-          address: ["Amsterdam", "Rotterdam", "London", "Monaco", "Porto"].sample,
-          price: 1500,
-          category: "Motor boats",
-          size: 15,
-          capacity: 15
-        )
-        @boat.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-        @boat.user = User.all.first
-
-        @boat.save
-        end
+Booking.destroy_all
+5.times do
+  Booking.create!(
+    start_date: "2022-11-25",
+    end_date: "2022-11-28",
+    boat: Boat.all.sample,
+    user: User.all.sample,
+    status: "accepted"
+  )
+end
 
 puts "Finished!"
