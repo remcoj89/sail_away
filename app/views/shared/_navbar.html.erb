@@ -14,13 +14,13 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "My Bookings", bookings_path, class: "nav-link#{' nav-link-white' if current_page?(root_url)}" %> 
+            <%= link_to "My Bookings", bookings_path, class: "nav-link#{' nav-link-white' if current_page?(root_url)}" %>
           </li>
           <li class="nav-item">
             <%= link_to "Upload My Boat", new_boat_path, class: "nav-link#{' nav-link-white' if current_page?(root_url)}" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "profile_pic.jpeg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://res.cloudinary.com/dipnvqfev/image/upload/v1669573730/production/profile_pic_uzseao.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Profile", bookings_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
